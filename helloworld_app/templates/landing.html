@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+    Página Principal
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h1>Bienvenido a mi aplicación!</h1>
+        <img src="{% static 'imagen1.jpg' %}" alt="Imagen 1" class="img-fluid">
+        <img src="{% static 'imagen2.jpg' %}" alt="Imagen 2" class="img-fluid">
+        <!-- Aquí puedes agregar más contenido como un carrusel de Bootstrap, etc. -->
+    </div>
+{% endblock %}
