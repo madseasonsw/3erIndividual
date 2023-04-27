@@ -4,14 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Page</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>{% block title %}User Page{% endblock %}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.6.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">MyApp</a>
+            <a class="navbar-brand" href="#">
+                <img src="{% static 'img/logo.png' %}" alt="MyApp Logo" height="30" class="d-inline-block align-top">
+                MyApp
+            </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -32,35 +35,19 @@
     </header>
 
     <main class="container mt-5">
-        <h1>User Page</h1>
-        <div class="card">
-            <div class="card-header">
-                User Details
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">User Name: John Doe</h5>
-                <p class="card-text">Email: john.doe@example.com</p>
-                <p class="card-text">Fecha de nacimiento: 01/01/1990</p>
-            </div>
-            <div class="row mt-5">
-                <div class="col-md-6">
-                    <img src="{% static 'img/Imagen1.jpg' %}" alt="Imagen1" class="img-fluid">
-                </div>
-                <div class="col-md-6">
-                    <img src="{% static 'img/Imagen2.jpg' %}" alt="Imagen2" class="img-fluid">
-                </div>
-            </div>
-        </div>
+        {% block content %}
+        {% endblock %}
     </main>
 
-    <footer class="bg-light py-3 mt-5">
+    <footer class="bg-red py-3 mt-5">
         <div class="container text-center">
             <p>&copy; MyApp 2023. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.6.0/js/bootstrap.min.js"></script>
 </body>
 </html>
+
