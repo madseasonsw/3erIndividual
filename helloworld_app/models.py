@@ -2,6 +2,8 @@ from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, Permis
 from django.db import models
 import uuid
 
+
+
 def generate_unique_username():
     return str(uuid.uuid4())[:30]
 
@@ -37,3 +39,4 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.nombre
+
