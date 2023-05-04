@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}Restricted Page{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <h1 class="mb-4">Restricted Page</h1>
+    <p>Welcome, {{ user.first_name }} {{ user.last_name }}! You have successfully accessed the restricted page.</p>
+    <p>This page is only accessible to authenticated users.</p>
+  </div>
+{% endblock %}
