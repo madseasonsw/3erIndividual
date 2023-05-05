@@ -6,27 +6,23 @@ body {
 }
 
 /* Colores neón */
+.neon-blue,
+.neon-pink {
+    text-shadow:
+        0 0 5px currentColor,
+        0 0 10px currentColor,
+        0 0 20px currentColor,
+        0 0 30px currentColor,
+        0 0 40px currentColor;
+}
+
 .neon-blue {
     color: #08f7fe; /* Celeste neón */
-    text-shadow:
-        0 0 5px #08f7fe,
-        0 0 10px #08f7fe,
-        0 0 20px #08f7fe,
-        0 0 30px #08f7fe,
-        0 0 40px #08f7fe;
 }
 
 .neon-pink {
     color: #fe53bb; /* Rosado neón */
-    text-shadow:
-        0 0 5px #fe53bb,
-        0 0 10px #fe53bb,
-        0 0 20px #fe53bb,
-        0 0 30px #fe53bb,
-        0 0 40px #fe53bb;
 }
-
-
 
 /* Títulos */
 h1, h2, h3, h4, h5, h6 {
@@ -78,6 +74,7 @@ footer a {
 footer a:hover {
     color: #fe53bb;
 }
+
 .bg-red {
     background-color: #000000!important;
 }

@@ -7,9 +7,6 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required, user_passes_test
 
-
-
-
 def lista_de_usuarios(request):
     usuarios = CustomUser.objects.all()
     return render(request, 'lista_de_usuarios.html', {'usuarios': usuarios})
@@ -34,13 +31,12 @@ def save_user(request):
         last_name = request.POST.get('last_name')
         email = request.POST.get('email')
         password = request.POST.get('password')
-        
-        # Crear un nuevo objeto CustomUser y guardar los datos del formulario en la base de datos
+
         new_user = CustomUser(first_name=first_name, last_name=last_name, email=email)
         new_user.set_password(password)
         new_user.save()
-        
-        return redirect('home') # Reemplaza 'home' con la vista a la que deseas redirigir después de guardar los datos
+
+        return redirect('home')
     else:
         form = RegisterForm()
     return render(request, 'register.html', {'form': form})
@@ -72,4 +68,8 @@ def is_admin(user):
 def restricted_view(request):
     return render(request, 'restricted_view.html')
 
+# Agregando función de vista de perfil
+@login_required
+def profile(request):
+    return render(request, 'profile.html')
 
